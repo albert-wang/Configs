@@ -73,6 +73,7 @@ syn region mkdCode      start=/\s*``[^`]*/          end=/[^`]*``\s*/
 syn region mkdBlockquote start=/^\s*>/              end=/$/                 contains=mkdLineBreak,mkdLineContinue,@Spell
 syn region mkdCode      start="<pre[^>]*>"         end="</pre>"
 syn region mkdCode      start="<code[^>]*>"        end="</code>"
+syn region mkdCode		start="\~\~\+"				end="\~\~\+"
 
 "HTML headings
 syn region htmlH1       start="^\s*#"                   end="\($\|#\+\)" contains=@Spell
@@ -83,7 +84,6 @@ syn region htmlH5       start="^\s*#####"               end="\($\|#\+\)" contain
 syn region htmlH6       start="^\s*######"              end="\($\|#\+\)" contains=@Spell
 syn match  htmlH1       /^.\+\n=\+$/ contains=@Spell
 syn match  htmlH2       /^.\+\n-\+$/ contains=@Spell
-
 
 
 " fold region for headings

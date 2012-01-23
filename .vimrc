@@ -26,6 +26,8 @@ set number
 set showmatch
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 
 " Set the mouse.
 se mouse=a
