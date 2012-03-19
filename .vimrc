@@ -26,8 +26,6 @@ set number
 set showmatch
 set hlsearch
 set incsearch
-set ignorecase
-set smartcase
 
 " Set the mouse.
 se mouse=a
@@ -51,6 +49,9 @@ nnoremap <C-Left> <C-w>h
 nnoremap <C-Right> <C-w>l
 nnoremap <C-Up> <C-w>j
 nnoremap <C-Down> <C-w>k
+
+nnoremap K <C-u>
+nnoremap J <C-d>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
