@@ -15,9 +15,9 @@ set shiftwidth=4     " indent also with 4 spaces
 
 
 " turn syntax highlighting on
+set termguicolors
 set t_Co=256
 syntax on
-colorscheme molokai
 
 " turn line numbers on
 set number
@@ -63,3 +63,5 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <leader>c <C-w>q
+
+lua require('config')
