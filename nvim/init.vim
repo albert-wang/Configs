@@ -1,6 +1,6 @@
 set enc=utf-8
 set fenc=utf-8
-set termencoding=utf-8
+
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 " use indentation of previous line
@@ -11,12 +11,10 @@ set smartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
-" set expandtab
-
+set expandtab
 
 " turn syntax highlighting on
 set termguicolors
-set t_Co=256
 syntax on
 
 " turn line numbers on
@@ -37,18 +35,16 @@ se mouse=a
 
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
-set guifont=inconsolata:h12
+set guifont="Inconsolata Nerd Font Mono":h12
 
 " Folding
 set foldmethod=syntax
 set foldnestmax=4
 
 set equalalways
-let mapleader = ","
 
-nnoremap <leader>w :vsplit
-nnoremap <leader>s <C-w>s<C-w>l
-nnoremap <leader>q <C-w>q
+nnoremap <D-z> u
+nnoremap <D-y> <C-r>
 
 nnoremap <C-Left> <C-w>h
 nnoremap <C-Right> <C-w>l
@@ -62,6 +58,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <leader>c <C-w>q
 
 lua require('config')
+
+:Neotree show
