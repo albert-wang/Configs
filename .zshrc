@@ -3,8 +3,6 @@
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-source ~/.config/zsh/zsh-z.plugin.zsh
-
 autoload -U +X compinit && compinit
 fpath=(~/.config/zsh $fpath)
 
@@ -15,17 +13,30 @@ setopt prompt_subst
 PROMPT='[%F{green}%n%B%F{white}@%F{cyan}macbook %b%F{036}%1d%f${vcs_info_msg_0_}] '
 
 setopt nobeep
+setopt RM_STAR_SILENT
 
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
+bindkey  "^[[1;6D" beginning-of-line
+bindkey  "^[[1;6C" end-of-line
+bindkey  "^[[1;5D" backward-word
+bindkey  "^[[1;5C" forward-word
 
 ### SSH-agent setup
-eval $(ssh-agent) &>/dev/null
+killall -0 ssh-agent &>/dev/null
+if [ $? -ne 0 ]; then 
+        eval $(ssh-agent) &>/dev/null
+fi 
 ssh-add -A &>/dev/null
-
 
 ### Aliases
 alias tmux='tmux -2'
 alias ls="ls -Ga"
-alias brew64="arch -x86_64 /usr/local/homebrew/bin/brew"
-alias do64="arch -x86_64"
+alias d="sudo docker"
+alias k="kubectl"
+alias vim="nvim"
+
+alias gfr="git fetch -v origin && git rebase"
+alias gf="git fetch -v origin"
+alias gap="git add -p"
+alias gc="git commit"
+
+source ~/.config/zsh/z/zsh-z.plugin.zsh
