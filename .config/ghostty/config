@@ -1,0 +1,53 @@
+# Fonts
+font-family="Inconsolata Nerd Font Mono"
+font-size=14
+font-feature="-calt, -liga, -dlig"
+window-inherit-font-size=false
+window-decoration=false
+
+# Theme
+# theme="Dark+"
+theme="mocha"
+cursor-style=bar
+gtk-tabs-location=hidden
+split-divider-color=208a5b
+
+# OSX stuff
+macos-non-native-fullscreen=true
+font-thicken=true
+
+# Behavior
+scrollback-limit = 1000000
+window-inherit-working-directory=true
+
+# Keybinds
+keybind = shift+super+r=reload_config
+
+mouse-scroll-multiplier = 0.1
+
+# Tmux emulation
+# keybind = super+n=new_tab
+# keybind = ctrl+b>c=new_tab
+ 
+## Create panes
+# keybind = ctrl+b>shift+\=new_split:right
+# keybind = ctrl+b>-=new_split:down
+
+## Move panes
+# keybind = ctrl+b>h=goto_split:left
+# keybind = ctrl+b>l=goto_split:right
+# keybind = ctrl+b>j=goto_split:down
+# keybind = ctrl+b>k=goto_split:up
+
+## OSX stuff
+keybind = super+h=ignore
+keybind = super+-=ignore
+keybind = super+shift+-=ignore
+
+keybind = cmd+z=esc:z
+
+## Copy paste
+keybind = shift+insert=paste_from_clipboard 
+keybind = cmd+v=paste_from_clipboard
+keybind = cmd+z=esc:z
+keybind = cmd+y=esc:y

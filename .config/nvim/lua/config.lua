@@ -11,18 +11,27 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	{
+outdated = 	{
 		"Mofiqul/vscode.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function() 
 			require("vscode").setup{
-		}
+            }
 
 			vim.cmd([[colorscheme vscode]])
 		end
-	},
+	}
+
+require("lazy").setup({
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000, config = function() 
+        require("catppuccin").setup{
+            flavor = "mocha"
+        }
+
+        vim.cmd([[colorscheme catppuccin-mocha]])
+        end,
+    },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function() 

@@ -3,8 +3,10 @@ set fenc=utf-8
 
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
+
 " use indentation of previous line
 set autoindent
+
 " use intelligent indentation for C
 set smartindent
 
@@ -37,14 +39,19 @@ se mouse=a
 set comments=sl:/*,mb:\ *,elx:\ */
 set guifont="Inconsolata Nerd Font Mono":h12
 
+" Clipboard
+set clipboard+=unnamedplus
+
 " Folding
 set foldmethod=syntax
 set foldnestmax=4
 
 set equalalways
 
-nnoremap <D-z> u
-nnoremap <D-y> <C-r>
+nnoremap <C-z> u
+nnoremap <C-y> <C-r>
+nnoremap <M-z> u
+nnoremap <M-y> <C-r>
 
 nnoremap <C-Left> <C-w>h
 nnoremap <C-Right> <C-w>l
@@ -59,6 +66,15 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 
+" Nvim stuff
 lua require('config')
 
+" Hide the command line when not being used
+set cmdheight=0
+
 :Neotree show
+
+augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:ver20
+augroup END

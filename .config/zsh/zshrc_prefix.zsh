@@ -3,7 +3,8 @@
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-autoload -U -X compinit && compinit
+autoload -U compinit 
+compinit
 fpath=(~/.config/zsh $fpath)
 
 zstyle ':completion:*:*:git:*' script ~/.config/zsh/git-completion.bash
@@ -13,12 +14,15 @@ setopt prompt_subst
 PROMPT='[%F{green}%n%B%F{white}@%F{cyan}macbook %b%F{036}%1d%f${vcs_info_msg_0_}] '
 
 setopt nobeep
-setopt RM_STAR_SILENT
+setopt rm_star_silent
+setopt inc_append_history
+setopt share_history
 
-bindkey  "^[[1;6D" beginning-of-line
-bindkey  "^[[1;6C" end-of-line
-bindkey  "^[[1;5D" backward-word
-bindkey  "^[[1;5C" forward-word
+bindkey  "^A" beginning-of-line
+bindkey  "^E" end-of-line
+bindkey  "^[b" backward-word
+bindkey  "^[f" forward-word
+bindkey  "^R" history-incremental-search-backward
 
 ### SSH-agent setup
 killall -0 ssh-agent &>/dev/null
