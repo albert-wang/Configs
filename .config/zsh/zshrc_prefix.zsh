@@ -18,7 +18,7 @@ setopt rm_star_silent
 setopt inc_append_history
 setopt share_history
 
-# WTF, remove vim / emacs bindings
+# Remove vim / emacs bindings
 bindkey -v
 bindkey -e
 
@@ -64,11 +64,12 @@ ssh-add -A &>/dev/null
 
 ### Aliases
 alias tmux='tmux -2'
-alias ls="ls -Ga"
+alias ls="ls -Ga --color=auto"
 alias d="sudo docker"
 alias k="kubectl"
 alias vim="nvim"
 
+alias g="git"
 alias gfr="git fetch -v origin && git rebase"
 alias gf="git fetch -v origin"
 alias gap="git add -p"
