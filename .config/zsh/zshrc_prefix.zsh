@@ -11,7 +11,7 @@ zstyle ':completion:*:*:git:*' script ~/.config/zsh/git-completion.bash
 zstyle ':vcs_info:git:*' formats ' (%F{32}%b%f)'
 
 setopt prompt_subst
-PROMPT='[%F{green}%n%B%F{white}@%F{cyan}macbook %b%F{036}%1d%f${vcs_info_msg_0_}] '
+PROMPT='[%F{green}%n%B%F{white}@%F{cyan}${RAWR_HOSTNAME} %b%F{036}%1d%f${vcs_info_msg_0_}] '
 
 setopt nobeep
 setopt rm_star_silent
