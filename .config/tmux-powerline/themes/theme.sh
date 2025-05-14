@@ -14,12 +14,14 @@ else
 	TMUX_POWERLINE_SEPARATOR_RIGHT_THIN="❯"
 fi
 
-bg="#181825"
-fg="#f9e2af"
+# Catcuppin colors
+bg="#181926"
+fg="#f5e0dc"
 red="#f38ba8"
 green="#a6e3a1"
-blue="#89dceb"
+blue="#89b4fa"
 grey="#585b70"
+white="#cdd6f4"
 
 # See Color formatting section below for details on what colors can be used here.
 TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-$bg}
@@ -67,6 +69,8 @@ fi
 TMUX_POWERLINE_SEG_TMUX_SESSION_INFO_FORMAT=(
     "#{@rawr_suspended}"
 )
+
+TMUX_POWERLINE_SEG_TIME_FORMAT="%I:%M %p"
 # Format: segment_name [background_color|default_bg_color] [foreground_color|default_fg_color] [non_default_separator|default_separator] [separator_background_color|no_sep_bg_color]
 #                      [separator_foreground_color|no_sep_fg_color] [spacing_disable|no_spacing_disable] [separator_disable|no_separator_disable]
 #
@@ -120,8 +124,9 @@ fi
 if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
         "tmux_session_info $bg $red = no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
-		"date_day $bg $fg default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
-		"date $bg $fg default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
+        "pwd $bg $white"
+        "vcs_branch $bg $white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+		"date $bg $fg ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN} no_sep_bg_color ${fg} spacing_disable"
 		"time $bg $green default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
 	)
 fi
