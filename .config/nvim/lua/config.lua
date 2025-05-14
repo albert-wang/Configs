@@ -84,6 +84,11 @@ require("lazy").setup({
 			vim.api.nvim_set_keymap('n', "<C-e>", ":Neotree<CR>", { noremap=true, silent=true })
 
 			require('neo-tree').setup {
+                filesystem = {
+                    filtered_items = {
+                        visible = true
+                    }
+                },
 				default_component_configs = {
 					icon = {
 						default = " ",
