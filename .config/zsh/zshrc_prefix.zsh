@@ -18,10 +18,41 @@ setopt rm_star_silent
 setopt inc_append_history
 setopt share_history
 
-bindkey  "^A" beginning-of-line
-bindkey  "^E" end-of-line
+# WTF, remove vim / emacs bindings
+bindkey -v
+bindkey -e
+
+# reasonable bindings
+
+# del, shift+del
+bindkey "^[[3~" delete-char
+bindkey "^[[3;2~" delete-char
+
+# up, shift + up
+bindkey "^[[A" up-line-or-history
+bindkey "^[[1;2A" beginning-of-line
+
+# down, shift + down
+bindkey "^[[B" down-line-or-history
+bindkey "^[[1;2B" end-of-line
+
+# left, Shift + left
 bindkey  "^[b" backward-word
+bindkey  "^[[1;2D" backward-word
+
+# right, Shift + right
 bindkey  "^[f" forward-word
+bindkey  "^[[1;2C" forward-word
+
+# Home, shift Home
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[1;2H" beginning-of-line
+
+# End, shift End
+bindkey "^[[4~" end-of-line
+bindkey "^[[1;2F" end-of-line
+
+
 bindkey  "^R" history-incremental-search-backward
 
 ### SSH-agent setup

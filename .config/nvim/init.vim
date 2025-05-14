@@ -48,9 +48,15 @@ set foldnestmax=4
 
 set equalalways
 
+set timeoutlen=200
+set ttimeoutlen=100
+
+" Mostly clipboard stuff
 noremap d "_d
 noremap dd "_dd
+noremap x "_x
 noremap c "_c
+noremap <Del> "_x
 
 nnoremap <C-z> u
 nnoremap <C-y> <C-r>
