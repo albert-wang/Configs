@@ -33,7 +33,7 @@ set smartcase
 set nobackup
 
 " Set the mouse.
-se mouse=a
+set mouse=a
 
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
@@ -47,6 +47,10 @@ set foldmethod=syntax
 set foldnestmax=4
 
 set equalalways
+
+noremap d "_d
+noremap dd "_dd
+noremap c "_c
 
 nnoremap <C-z> u
 nnoremap <C-y> <C-r>
