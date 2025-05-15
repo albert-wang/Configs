@@ -1,3 +1,3 @@
 ./git-setup.sh
 git submodule update --init
-cp -r .config ~/
+cp -r config/ ~/.config/
