@@ -15,13 +15,17 @@ else
 fi
 
 # Catcuppin colors
-bg="#181926"
+bg="#11111b"
 fg="#f5e0dc"
 red="#f38ba8"
 green="#a6e3a1"
 blue="#89b4fa"
+sapphire="#74c7ec"
 grey="#585b70"
+lavender="#b4befe"
 white="#cdd6f4"
+base="#1e1e2e"
+mantle="#181825"
 
 # See Color formatting section below for details on what colors can be used here.
 TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-$bg}
@@ -41,9 +45,9 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 # shellcheck disable=SC2128
 if [ -z "$TMUX_POWERLINE_WINDOW_STATUS_CURRENT" ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_CURRENT=(
-		"#[fg=$blue,bg=$bg]"
+		"#[fg=$blue,bg=$base]"
         "#{?@rawr_suspended,#[fg=$red],}"
-		" [#I "
+		" [#I"
         "$TMUX_POWERLINE_SEPARATOR_RIGHT_THIN" 
         " #{?@rawr_suspended,SUSPENDED ,}#W] "
     )
@@ -60,7 +64,7 @@ fi
 if [ -z "$TMUX_POWERLINE_WINDOW_STATUS_FORMAT" ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_FORMAT=(
         "#[fg=$grey,bg=$bg]"
-        " [#I#{?window_flags,#F, }"
+        " [#I"
         "$TMUX_POWERLINE_SEPARATOR_RIGHT_THIN" 
         " #W] "
 	)
@@ -70,7 +74,8 @@ TMUX_POWERLINE_SEG_TMUX_SESSION_INFO_FORMAT=(
     "#{@rawr_suspended}"
 )
 
-TMUX_POWERLINE_SEG_TIME_FORMAT="%I:%M %p"
+TMUX_POWERLINE_SEG_TIME_FORMAT="%-I:%M %p"
+TMUX_POWERLINE_SEG_DATE_FORMAT="%a, %b %-d"
 # Format: segment_name [background_color|default_bg_color] [foreground_color|default_fg_color] [non_default_separator|default_separator] [separator_background_color|no_sep_bg_color]
 #                      [separator_foreground_color|no_sep_fg_color] [spacing_disable|no_spacing_disable] [separator_disable|no_separator_disable]
 #
@@ -126,7 +131,7 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
         "tmux_session_info $bg $red = no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
         "pwd $bg $white"
         "vcs_branch $bg $white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
-		"date $bg $fg ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN} no_sep_bg_color ${fg} spacing_disable"
+		"date $bg $sapphire ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN} no_sep_bg_color ${lavender} spacing_disable"
 		"time $bg $green default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
 	)
 fi
