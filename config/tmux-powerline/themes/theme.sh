@@ -129,9 +129,9 @@ fi
 if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
         "tmux_session_info $bg $red = no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
-        "pwd $bg $white"
-        "vcs_branch $bg $white ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+        #"pwd $bg $white"
+        "vcs_branch $bg $white default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
 		"date $bg $sapphire ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN} no_sep_bg_color ${lavender} spacing_disable"
-		"time $bg $green default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
+ 		"time $bg $green default_separator no_sep_bg_color no_sep_fg_color spacing_disable separator_disable"
 	)
 fi

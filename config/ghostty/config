@@ -4,6 +4,9 @@ font-size=14
 font-feature="-calt, -liga, -dlig"
 window-inherit-font-size=false
 window-decoration=false
+window-padding-x=0
+window-padding-y=0
+window-padding-balance=true
 
 # Theme
 # theme="Dark+"
@@ -45,6 +48,9 @@ keybind = super+-=ignore
 keybind = super+shift+-=ignore
 
 keybind = cmd+z=esc:z
+
+## Global Summon
+keybind = global:ctrl+`=toggle_visibility
 
 ## Copy paste
 keybind = shift+insert=paste_from_clipboard 
