@@ -25,6 +25,7 @@ window-inherit-working-directory=true
 
 # Keybinds
 keybind = shift+super+r=reload_config
+keybind = cmd+shift+enter=toggle_fullscreen
 
 mouse-scroll-multiplier = 0.1
 
