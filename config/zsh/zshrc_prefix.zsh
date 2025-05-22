@@ -47,10 +47,12 @@ bindkey  "^[[1;2C" forward-word
 # Home, shift Home
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[1;2H" beginning-of-line
+bindkey "^[[H" beginning-of-line
 
 # End, shift End
 bindkey "^[[4~" end-of-line
 bindkey "^[[1;2F" end-of-line
+bindkey "^[[F" end-of-line
 
 
 bindkey  "^R" history-incremental-search-backward
