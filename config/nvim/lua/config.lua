@@ -155,8 +155,21 @@ require("lazy").setup({
 			})
 		end
 	},
-	{'neovim/nvim-lspconfig'
-},
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        config = function()
+            require('render-markdown').setup({
+                 heading = { 
+                     position = 'inline', 
+                     icons = {'# ', '## ', '### ', '#### ', '##### ', '###### '},
+                     sign = false, 
+                     backgrounds = false
+                 }
+            })
+        end
+    },
+	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'windwp/nvim-autopairs', 

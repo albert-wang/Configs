@@ -7,6 +7,8 @@ autoload -U compinit
 compinit
 fpath=(~/.config/zsh $fpath)
 
+export LANG=en_US.UTF-8
+
 zstyle ':completion:*:*:git:*' script ~/.config/zsh/git-completion.bash
 zstyle ':vcs_info:git:*' formats ' (%F{32}%b%f)'
 
