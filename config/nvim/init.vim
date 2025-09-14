@@ -52,11 +52,12 @@ set timeoutlen=200
 set ttimeoutlen=100
 
 " Mostly clipboard stuff
-noremap d "_d
-noremap dd "_dd
-noremap x "_x
-noremap c "_c
-noremap <Del> "_x
+" System clipboard integration
+vnoremap <M-c> "+y:let @" = @+<CR>
+nnoremap <M-v> "+p
+vnoremap <M-v> "+p
+inoremap <M-v> <C-r>+
+nnoremap <M-x> "+dd:let @" = @+<CR>
 
 nnoremap <C-z> u
 nnoremap <C-y> <C-r>
